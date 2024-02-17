@@ -2,6 +2,7 @@ import { useCallback, useEffect } from 'react'
 import { StatusBar } from 'expo-status-bar'
 import * as SplashScreen from 'expo-splash-screen'
 import { ThemeProvider } from 'styled-components/native'
+import { AppProvider, UserProvider } from '@realm/react'
 
 import {
   useFonts,
@@ -10,6 +11,8 @@ import {
 } from '@expo-google-fonts/roboto'
 
 import { THEME } from '@/theme/default'
+
+import { Home } from '@/screens/home'
 import { SignIn } from '@/screens/sign-in'
 
 SplashScreen.preventAutoHideAsync()
@@ -38,9 +41,13 @@ export default function App() {
     <>
       <StatusBar style="light" backgroundColor="transparent" translucent />
 
-      <ThemeProvider theme={THEME}>
-        <SignIn />
-      </ThemeProvider>
+      <AppProvider id={process.env.EXPO_PUBLIC_REALM_APP_ID!}>
+        <ThemeProvider theme={THEME}>
+          <UserProvider fallback={SignIn}>
+            <Home />
+          </UserProvider>
+        </ThemeProvider>
+      </AppProvider>
     </>
   )
 }
