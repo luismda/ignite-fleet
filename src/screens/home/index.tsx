@@ -1,5 +1,11 @@
 import { Container } from './styles'
 
+import { HomeHeader } from '@/components/home-header'
+
 export function Home() {
-  return <Container></Container>
+  return (
+    <Container>
+      <HomeHeader />
+    </Container>
+  )
 }
