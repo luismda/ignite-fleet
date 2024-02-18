@@ -3,6 +3,7 @@ import { StatusBar } from 'expo-status-bar'
 import * as SplashScreen from 'expo-splash-screen'
 import { ThemeProvider } from 'styled-components/native'
 import { AppProvider, UserProvider } from '@realm/react'
+import { SafeAreaProvider } from 'react-native-safe-area-context'
 
 import {
   useFonts,
@@ -12,7 +13,7 @@ import {
 
 import { THEME } from '@/theme/default'
 
-import { Home } from '@/screens/home'
+import { Routes } from '@/routes'
 import { SignIn } from '@/screens/sign-in'
 
 SplashScreen.preventAutoHideAsync()
@@ -43,9 +44,11 @@ export default function App() {
 
       <AppProvider id={process.env.EXPO_PUBLIC_REALM_APP_ID!}>
         <ThemeProvider theme={THEME}>
-          <UserProvider fallback={SignIn}>
-            <Home />
-          </UserProvider>
+          <SafeAreaProvider>
+            <UserProvider fallback={SignIn}>
+              <Routes />
+            </UserProvider>
+          </SafeAreaProvider>
         </ThemeProvider>
       </AppProvider>
     </>
