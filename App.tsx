@@ -12,6 +12,7 @@ import {
 } from '@expo-google-fonts/roboto'
 
 import { THEME } from '@/theme/default'
+import { RealmProvider } from '@/lib/realm'
 
 import { Routes } from '@/routes'
 import { SignIn } from '@/screens/sign-in'
@@ -46,7 +47,9 @@ export default function App() {
         <ThemeProvider theme={THEME}>
           <SafeAreaProvider>
             <UserProvider fallback={SignIn}>
-              <Routes />
+              <RealmProvider>
+                <Routes />
+              </RealmProvider>
             </UserProvider>
           </SafeAreaProvider>
         </ThemeProvider>
