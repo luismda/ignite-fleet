@@ -45,7 +45,9 @@ export default function App() {
 
       <AppProvider id={process.env.EXPO_PUBLIC_REALM_APP_ID!}>
         <ThemeProvider theme={THEME}>
-          <SafeAreaProvider>
+          <SafeAreaProvider
+            style={{ flex: 1, backgroundColor: THEME.COLORS.GRAY_800 }}
+          >
             <UserProvider fallback={SignIn}>
               <RealmProvider>
                 <Routes />
