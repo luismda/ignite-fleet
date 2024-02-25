@@ -1,3 +1,4 @@
+import '@/libs/dayjs'
 import 'react-native-get-random-values'
 
 import { useCallback, useEffect } from 'react'
@@ -14,7 +15,7 @@ import {
 } from '@expo-google-fonts/roboto'
 
 import { THEME } from '@/theme/default'
-import { RealmProvider } from '@/lib/realm'
+import { RealmProvider } from '@/libs/realm'
 
 import { Routes } from '@/routes'
 import { SignIn } from '@/screens/sign-in'

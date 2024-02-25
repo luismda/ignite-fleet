@@ -3,8 +3,8 @@ import { useNavigation, useRoute } from '@react-navigation/native'
 import { X } from 'phosphor-react-native'
 import { BSON } from 'realm'
 
-import { useObject, useRealm } from '@/lib/realm'
-import { History } from '@/lib/realm/schemas/history'
+import { useObject, useRealm } from '@/libs/realm'
+import { History } from '@/libs/realm/schemas/history'
 
 import {
   Label,
@@ -87,9 +87,12 @@ export function Arrival() {
     }
   }
 
+  const isDeparture = history?.status === 'departure'
+  const title = isDeparture ? 'Chegada' : 'Histórico'
+
   return (
     <Container>
-      <Header title="Chegada" />
+      <Header title={title} />
 
       <Content>
         <Label>Placa do veículo</Label>
@@ -98,15 +101,17 @@ export function Arrival() {
         <Label>Finalidade</Label>
         <Description>{history?.description}</Description>
 
-        <Footer>
-          <ButtonIcon
-            icon={X}
-            accessibilityLabel="Cancelar utilização do veículo"
-            onPress={handleRemoveVehicleUsage}
-          />
+        {isDeparture && (
+          <Footer>
+            <ButtonIcon
+              icon={X}
+              accessibilityLabel="Cancelar utilização do veículo"
+              onPress={handleRemoveVehicleUsage}
+            />
 
-          <Button title="Registrar chegada" onPress={handleRegisterArrival} />
-        </Footer>
+            <Button title="Registrar chegada" onPress={handleRegisterArrival} />
+          </Footer>
+        )}
       </Content>
     </Container>
   )

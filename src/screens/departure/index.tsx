@@ -10,8 +10,8 @@ import {
   KeyboardAvoidingView,
 } from 'react-native'
 
-import { useRealm } from '@/lib/realm'
-import { History } from '@/lib/realm/schemas/history'
+import { useRealm } from '@/libs/realm'
+import { History } from '@/libs/realm/schemas/history'
 import { validateLicensePlate } from '@/utils/validate-license-plate'
 
 import { Container, Content } from './styles'
