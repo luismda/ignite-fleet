@@ -92,7 +92,9 @@ export function Home() {
     realm.addListener('change', refetchQueries)
 
     return () => {
-      realm.removeListener('change', refetchQueries)
+      if (realm && !realm.isClosed) {
+        realm.removeListener('change', refetchQueries)
+      }
     }
   }, [realm, fetchVehicleInUse, fetchHistory])
 

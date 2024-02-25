@@ -100,19 +100,19 @@ export function Arrival() {
 
         <Label>Finalidade</Label>
         <Description>{history?.description}</Description>
-
-        {isDeparture && (
-          <Footer>
-            <ButtonIcon
-              icon={X}
-              accessibilityLabel="Cancelar utilização do veículo"
-              onPress={handleRemoveVehicleUsage}
-            />
-
-            <Button title="Registrar chegada" onPress={handleRegisterArrival} />
-          </Footer>
-        )}
       </Content>
+
+      {isDeparture && (
+        <Footer>
+          <ButtonIcon
+            icon={X}
+            accessibilityLabel="Cancelar utilização do veículo"
+            onPress={handleRemoveVehicleUsage}
+          />
+
+          <Button title="Registrar chegada" onPress={handleRegisterArrival} />
+        </Footer>
+      )}
     </Container>
   )
 }

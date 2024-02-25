@@ -21,7 +21,7 @@ export function CarStatus({ licensePlate = null, ...rest }: CarStatusProps) {
   return (
     <Container activeOpacity={0.7} {...rest}>
       <IconBox>
-        <Icon size={32} color={THEME.COLORS.BRAND_LIGHT} />
+        <Icon size={52} weight="light" color={THEME.COLORS.BRAND_LIGHT} />
       </IconBox>
 
       <Message style={{ textAlignVertical: 'center' }}>
