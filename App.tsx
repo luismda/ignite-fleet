@@ -15,10 +15,11 @@ import {
 } from '@expo-google-fonts/roboto'
 
 import { THEME } from '@/theme/default'
-import { RealmProvider } from '@/libs/realm'
+import { RealmProvider, syncConfig } from '@/libs/realm'
 
 import { Routes } from '@/routes'
 import { SignIn } from '@/screens/sign-in'
+import { Loading } from '@/components/loading'
 
 SplashScreen.preventAutoHideAsync()
 
@@ -52,7 +53,7 @@ export default function App() {
             style={{ flex: 1, backgroundColor: THEME.COLORS.GRAY_800 }}
           >
             <UserProvider fallback={SignIn}>
-              <RealmProvider>
+              <RealmProvider sync={syncConfig} fallback={Loading}>
                 <Routes />
               </RealmProvider>
             </UserProvider>
