@@ -4,7 +4,7 @@ import { createRealmContext } from '@realm/react'
 import { History } from './schemas/history'
 
 const realmAccessBehavior: Realm.OpenRealmBehaviorConfiguration = {
-  type: Realm.OpenRealmBehaviorType.OpenImmediately,
+  type: Realm.OpenRealmBehaviorType.DownloadBeforeOpen,
 }
 
 export const syncConfig: Partial<SyncConfiguration> = {
