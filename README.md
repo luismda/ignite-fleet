@@ -10,16 +10,26 @@ Clone the repository:
 git clone https://github.com/luismda/ignite-fleet.git
 ```
 
-Install the dependencies:
+Configure env variables (`.env.example`) and then install dependencies:
 
 ```sh
 npm i
 ```
 
+Run pre build:
+
+```sh
+npx expo prebuild
+```
+
 Start app:
 
 ```sh
-npm start
+npm run android
+
+# or
+
+npm run ios
 ```
 
 ## Created by
