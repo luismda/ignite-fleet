@@ -12,6 +12,14 @@ export const Content = styled.View`
   margin-top: 16px;
 `
 
+export const MessageContent = styled.View`
+  flex: 1;
+  gap: 44px;
+  padding: 32px;
+
+  justify-content: center;
+`
+
 export const Message = styled.Text`
   ${({ theme }) => css`
     color: ${theme.COLORS.GRAY_400};
@@ -20,6 +28,5 @@ export const Message = styled.Text`
     font-family: ${theme.FONT_FAMILY.REGULAR};
   `}
 
-  margin: 32px;
   text-align: center;
 `

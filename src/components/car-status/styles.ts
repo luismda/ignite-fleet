@@ -26,7 +26,6 @@ export const IconBox = styled.View`
 
 export const Message = styled.Text`
   flex: 1;
-  text-align: justify;
 
   ${({ theme }) => css`
     color: ${theme.COLORS.GRAY_100};

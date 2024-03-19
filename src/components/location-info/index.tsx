@@ -2,7 +2,7 @@ import { Container, Description, Info, Label } from './styles'
 
 import { IconBox, IconElementType } from '@/components/icon-box'
 
-interface LocationInfoProps {
+export interface LocationInfoProps {
   label: string
   description: string
   icon: IconElementType
