@@ -10,15 +10,24 @@
 
 ## About
 
-Offline first app in React Native and Expo for managing vehicle fleets.
+This project is an offline-first mobile application developed with React Native and Expo for managing vehicle fleets. In the app, you can log in with your Google account and, after that, register the departure of a vehicle by informing the license plate and purpose. 
+
+The application is able to obtain your current location and identify changes in location, creating a drawing on the map of the route taken with the vehicle. Finally, it is possible to record the arrival of the vehicle and view all vehicles used in a history. As the application is offline-first, it is possible to perform these functions without an internet connection, so the data will be synchronized in an online database when there is an internet connection again.
+
+The focus of this project was to implement social authentication, offline-first and geolocation techniques. So here are some technologies used:
 
 - React Native
 - Expo
+- Expo Location (get current location)
 - TypeScript
-- React Native Maps
-- RealmDB
-- MongoDB Atlas
-- Google Cloud Platform
+- React Native Maps (display the map)
+- RealmDB (manage data in offline state)
+- MongoDB Atlas (manage data in online state)
+- Google Cloud Platform (social authentication and maps API)
+
+Additionally, this project was developed during [Rocketseat](https://github.com/rocketseat-education) React Native training. The project's Figma can be accessed through the link below.
+
+[**Access the project layout in Figma**](https://www.figma.com/community/file/1233747170984378974)
 
 ## Instructions
 
@@ -28,7 +37,7 @@ Clone the repository:
 git clone https://github.com/luismda/ignite-fleet.git
 ```
 
-Configure env variables (`.env.example`) and then install dependencies:
+Create a `.env` file (following the `.env.example`) and then install dependencies:
 
 ```sh
 npm i
