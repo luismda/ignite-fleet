@@ -14,7 +14,7 @@ This project is an offline-first mobile application developed with React Native 
 
 The application is able to obtain your current location and identify changes in location, creating a drawing on the map of the route taken with the vehicle. Finally, it is possible to record the arrival of the vehicle and view all vehicles used in a history. As the application is offline-first, it is possible to perform these functions without an internet connection, so the data will be synchronized in an online database when there is an internet connection again.
 
-The focus of this project was to implement social authentication, offline-first and geolocation techniques. So here are some technologies used:
+The focus of this project was to implement **social authentication, offline-first and geolocation techniques**. So here are some technologies used:
 
 - React Native
 - Expo
